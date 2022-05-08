@@ -12,8 +12,8 @@ ___________________________________
  - Licence : GNU GPL v3
 */
 
-#include <iostream>
+#include "ivra.h"
 
-void hello() {
+void IVRA::debug() {
 	std::cout << "hello" << std::endl;
 }

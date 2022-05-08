@@ -6,5 +6,6 @@ using namespace std;
 
 int main()
 {
-	hello();
+	IVRA test;
+	test.debug();
 }
