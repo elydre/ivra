@@ -14,6 +14,18 @@ ___________________________________
 
 #include "ivra.h"
 
-void IVRA::debug() {
-	std::cout << "hello" << std::endl;
+void IVRA::test_class() {
+	std::cout << "that run!" << std::endl;
+}
+
+void IVRA::set(int id, int val) {
+	rgt[id] = val;
+}
+
+void IVRA::get(int id, int to) {
+	ram[to] = rgt[id];
+}
+
+void IVRA::show(int to) {
+	std::cout << ram[to] << std::endl;
 }
