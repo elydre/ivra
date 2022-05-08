@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Ajoutez une source à l'exécutable de ce projet.
-add_executable (ivra "ivra.cpp" "ivra.h")
+add_executable (ivra "ivra.cpp" "ivra.h" "core.cpp")
 
 # TODO: Ajoutez des tests et installez des cibles si nécessaire.
