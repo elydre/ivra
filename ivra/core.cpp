@@ -29,3 +29,7 @@ void IVRA::show(int id) {
 void IVRA::add(int id1, int id2, int exit) {
 	rgt[exit] = rgt[id1] + rgt[id2];
 }
+
+void IVRA::is_egal(int id1, int id2, int exit){
+	rgt[exit] = rgt[id1] == rgt[id2];
+}

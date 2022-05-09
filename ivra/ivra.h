@@ -16,4 +16,5 @@ public:
 	void get(int id, int to);
 	void show(int to);
 	void add(int id1, int id2, int exit);
+	void is_egal(int id1, int id2, int exit);
 };

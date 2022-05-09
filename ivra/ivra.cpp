@@ -11,5 +11,7 @@ int main()
 	test.set(5, 30);
 	test.set(6, 12);
 	test.add(5, 6, 7);
-	test.show(7);
+	test.set(8, 42);
+	test.is_egal(7, 8, 9);
+	test.show(9);
 }
