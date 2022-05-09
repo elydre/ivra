@@ -6,12 +6,13 @@ using namespace std;
 
 int main()
 {
-	IVRA test;
+	IVRA test; // 1+2*3
 	test.test_class();
-	test.set(5, 30);
-	test.set(6, 12);
+	test.set(5, 1);
+	test.set(6, 2);
 	test.add(5, 6, 7);
-	test.set(8, 42);
-	test.is_egal(7, 8, 9);
+	test.set(8, 3);
+	test.mul(7, 8, 9);
 	test.show(9);
+	
 }
