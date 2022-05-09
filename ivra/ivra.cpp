@@ -13,6 +13,5 @@ int main()
 	test.add(5, 6, 7);
 	test.set(8, 3);
 	test.mul(7, 8, 9);
-	test.show(9);
-	
+	test.show(9);	
 }
