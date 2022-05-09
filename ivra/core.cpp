@@ -6,7 +6,7 @@
 		  |___/
 ___________________________________
 
- - codé en : UTF-8
+ - codï¿½ en : UTF-8
  - langage : c++
  - GitHub  : github.com/elydre
  - Licence : GNU GPL v3
@@ -22,10 +22,6 @@ void IVRA::set(int id, int val) {
 	rgt[id] = val;
 }
 
-void IVRA::get(int id, int to) {
-	ram[to] = rgt[id];
-}
-
-void IVRA::show(int to) {
-	std::cout << ram[to] << std::endl;
+void IVRA::show(int id) {
+	std::cout << ram[id] << std::endl;
 }
