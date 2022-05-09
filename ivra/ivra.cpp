@@ -8,6 +8,8 @@ int main()
 {
 	IVRA test;
 	test.test_class();
-	test.set(5, 42);	// set 42 in the registe
-	test.show(5);		// print the int of ram[1]
+	test.set(5, 30);
+	test.set(6, 12);
+	test.add(5, 6, 7);
+	test.show(7);
 }

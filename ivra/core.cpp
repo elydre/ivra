@@ -23,5 +23,9 @@ void IVRA::set(int id, int val) {
 }
 
 void IVRA::show(int id) {
-	std::cout << ram[id] << std::endl;
+	std::cout << rgt[id] << std::endl;
+}
+
+void IVRA::add(int id1, int id2, int exit) {
+	rgt[exit] = rgt[id1] + rgt[id2];
 }
