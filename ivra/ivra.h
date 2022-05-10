@@ -24,6 +24,7 @@ public:
 	void mul(int id1, int id2, int exit);
 	void div(int id1, int id2, int exit);
 	void is_egal(int id1, int id2, int exit);
+	int get_rgt(int id);
 };
 
 // parser.cpp

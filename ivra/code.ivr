@@ -1,5 +1,1 @@
 test_class
-set 0 13
-set 1 8
-mul 0 1 2
-show 2
