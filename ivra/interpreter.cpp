@@ -3,15 +3,19 @@
 using namespace std;
 
 void start_inter(vector<string> code, IVRA obj, int while_id) {
-	int to_pass = 0;
 	while (obj.get_rgt(while_id)) {
+		int to_pass = 0;
 		for (int i = 0; i < code.size(); i++) {
 			string ligne = code[i];
+			// cout << "id: " << while_id << ", ligne: " << ligne << ", to_pass: " << to_pass << endl;
 			vector<string> args = split(ligne, ' ');
 			string mode = args[0];
 
 			if (mode == "end"){
 				to_pass--;
+				if (to_pass < 0) {
+					break;
+				}
 			}
 
 			if (to_pass){
@@ -48,10 +52,14 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 				obj.is_egal(stoi(args[1]), stoi(args[2]), stoi(args[3]));
 			}
 
+			else if (mode == "not") {
+				obj.not(stoi(args[1]));
+			}
+
 			else if (mode == "while")
 			{
 				vector<string> new_code;
-				for (int j = i; j < code.size(); j++) {
+				for (int j = i + 1; j < code.size(); j++) {
 					new_code.push_back(code[j]);
 				}
 				start_inter(new_code, obj, stoi(args[1]));

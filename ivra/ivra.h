@@ -23,6 +23,7 @@ public:
 	void sub(int id1, int id2, int exit);
 	void mul(int id1, int id2, int exit);
 	void div(int id1, int id2, int exit);
+	void not(int id);
 	void is_egal(int id1, int id2, int exit);
 	int get_rgt(int id);
 };
@@ -35,4 +36,4 @@ string readFile(const string& path);
 vector<string> split(string x, char delim = ' ');
 
 // interpreter.cpp
-void start_inter(vector<string> code, IVRA obj);
+void start_inter(vector<string> code, IVRA obj, int while_id);

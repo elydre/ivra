@@ -1,1 +1,11 @@
 test_class
+set 1 1
+set 2 0
+set 3 42
+while 1
+add 2 1 2
+show 2
+is_egal 2 3 1
+not 1
+end
+set 0 0

@@ -42,6 +42,15 @@ void IVRA::div(int id1, int id2, int exit) {
 	rgt[exit] = rgt[id1] / rgt[id2];
 }
 
+void IVRA::not(int id) {
+	if (rgt[id]) {
+		rgt[id] = 0;
+	}
+	else {
+		rgt[id] = 1;
+	}
+}
+
 void IVRA::is_egal(int id1, int id2, int exit) {
 	rgt[exit] = rgt[id1] == rgt[id2];
 }
