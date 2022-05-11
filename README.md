@@ -23,24 +23,24 @@ run:
 
 *in this part, register will be called as **rgt** and **r.***
 
-| keyword 		| description				| syntax					|
-| ------------- | ------------------------- | ------------------------- |
-| `end`			| end of while loop			| end						|
-| `while`		| while loop				| while *rgt != 0*			|
-| `test_class`	| test ivra 				| test_class				|
-| `set`			| set number on rgt			| set *rgt* *int*			|
-| `cp`			| copy rgt					| cp *rgt* *rgt*			|
-| `show`		| show rgt					| show *rgt*				|
-| `br`			| print new line			| br						|
-| `cout`		| print word in console		| cout *word*				|
-| `add`			| add two rgts				| add *in1* *in2* *out*		|
-| `sub`			| subtract two rgts			| sub *in1* *in2* *out*		|
-| `mul`			| multiply two rgts			| mul *in1* *in2* *out*		|
-| `div`			| divide two rgts			| sub *in1* *in2* *out*		|
-| `is_egal`		| test if two r. are equal	| is_egal *in1* *in2* out*	|
-| `is_sup`		| test if a r. is superior	| is_sup *in1* *in2* *out*	|
-| `or`			| boolean or				| or *in1* *in2* *out*		|
-| `not`			| boolean not				| not *rgt*					|
+| keyword 		| description				| syntax				|
+| ------------- | ------------------------- | --------------------- |
+| `end`			| end of while loop			| end					|
+| `while`		| while loop				| while *rgt != 0*		|
+| `test_class`	| test ivra 				| test_class			|
+| `set`			| set number on rgt			| set *rgt int*			|
+| `cp`			| copy rgt					| cp *rgt rgt*			|
+| `show`		| show rgt					| show *rgt*			|
+| `br`			| print new line			| br					|
+| `cout`		| print word in console		| cout *word*			|
+| `add`			| add two rgts				| add *in1 in2 out*		|
+| `sub`			| subtract two rgts			| sub *in1 in2 out*		|
+| `mul`			| multiply two rgts			| mul *in1 in2 out*		|
+| `div`			| divide two rgts			| sub *in1 in2 out*		|
+| `is_egal`		| test if two r. are equal	| is_egal *in1 in2 out*	|
+| `is_sup`		| test if a r. is superior	| is_sup *in1 in2 out*	|
+| `or`			| boolean or				| or *in1 in2 out*		|
+| `not`			| boolean not				| not *rgt*				|
 
 # Tips
 
