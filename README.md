@@ -21,7 +21,7 @@ run:
 
 ## keywords
 
-*in this part, register will be called as **rgt**.*
+*in this part, register will be called as **rgt** and **r.***
 
 | keyword 		| description				| syntax				|
 | ------------- | ------------------------- | --------------------- |
