@@ -24,6 +24,7 @@ public:
 	void sub(int id1, int id2, int exit);
 	void mul(int id1, int id2, int exit);
 	void div(int id1, int id2, int exit);
+	void mod(int id1, int id2, int exit);
 	void not(int id);
 	void is_egal(int id1, int id2, int exit);
 	void is_sup(int id1, int id2, int exit);

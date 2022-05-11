@@ -7,7 +7,7 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 		int to_pass = 0;
 		for (int i = 0; i < code.size(); i++) {
 			string ligne = code[i];
-			// cout << "id: " << while_id << ", ligne: " << ligne << ", to_pass: " << to_pass << endl;
+			cout << "id: " << while_id << ", ligne: " << ligne << ", to_pass: " << to_pass << endl;
 			vector<string> args = split(ligne, ' ');
 			string mode = args[0];
 
@@ -18,7 +18,11 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 				}
 			}
 
+
 			if (to_pass){
+				if (mode == "while") {
+					to_pass++;
+				}
 				continue;
 			}
 
@@ -51,6 +55,10 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 
 			else if (mode == "div") {
 				obj.div(stoi(args[1]), stoi(args[2]), stoi(args[3]));
+			}
+
+			else if (mode == "mod") {
+				obj.mod(stoi(args[1]), stoi(args[2]), stoi(args[3]));
 			}
 
 			else if (mode == "is_egal") {

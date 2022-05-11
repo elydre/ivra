@@ -1,21 +1,11 @@
-// FIBONACCI
 set 1 1
-.
-set 10 2
-set 11 3
-set 12 0 // temp
-.
-set 13 100000 // max
+set 2 1
 .
 while 1
-.
-show 10
-.
-cp 11 12
-add 10 11 11
-cp 12 10
-is_sup 13 11 1
-.
-end
+	while 2
+		set 2 0
+		end
+	set 1 0
+	end
 .
 set 0 0
