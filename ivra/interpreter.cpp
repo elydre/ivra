@@ -7,7 +7,7 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 		int to_pass = 0;
 		for (int i = 0; i < code.size(); i++) {
 			string ligne = code[i];
-			cout << "id: " << while_id << ", ligne: " << ligne << ", to_pass: " << to_pass << endl;
+			// cout << "id: " << while_id << ", ligne: " << ligne << ", to_pass: " << to_pass << endl;
 			vector<string> args = split(ligne, ' ');
 			string mode = args[0];
 

@@ -2,3 +2,4 @@
 out/
 *.exe
 ivra/.vscode/settings.json
+ivra/code.ivr
