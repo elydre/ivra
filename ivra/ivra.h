@@ -13,7 +13,7 @@ using namespace std;
 // core.cpp
 class IVRA {
 private:
-	int rgt[64] = { 0 };
+	int rgt[512] = { 0 };
 
 public:
 	void test_class();
