@@ -55,8 +55,8 @@ run:
 ### For loop like
 
 ```
-set 1 1	 // stop
-set 2 0	 // i
+set 1 1		// stop
+set 2 0		// i
 set 3 42	// max
 .
 while 1
@@ -78,7 +78,7 @@ set 10 2
 set 11 3
 set 12 0		// temp
 .
-set 13 100000   // max
+set 13 100000	// max
 .
 while 1
 	.
@@ -97,15 +97,15 @@ set 0 0
 ### Fist numbers
 
 ```
-set 2 2	 // i
-set 3 20000 // max
+set 2 2			// i
+set 3 20000		// max
 .
 while 0
 	.
 	add 2 0 2
 	.
-	set 4 1	 // stop
-	set 5 1	 // i
+	set 4 1		// stop
+	set 5 1		// i
 	.
 	while 4
 		.
