@@ -18,7 +18,6 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 				}
 			}
 
-
 			if (to_pass){
 				if (mode == "while") {
 					to_pass++;
