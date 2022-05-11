@@ -45,6 +45,10 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 				cout << endl;
 			}
 
+			else if (mode == "cout") {
+				cout << args[1];
+			}
+
 			else if (mode == "add") {
 				obj.add(stoi(args[1]), stoi(args[2]), stoi(args[3]));
 			}
@@ -71,6 +75,10 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 
 			else if (mode == "is_sup") {
 				obj.is_sup(stoi(args[1]), stoi(args[2]), stoi(args[3]));
+			}
+
+			else if (mode == "or") {
+				obj.or(stoi(args[1]), stoi(args[2]), stoi(args[3]));
 			}
 
 			else if (mode == "not") {

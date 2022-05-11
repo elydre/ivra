@@ -23,7 +23,7 @@ void IVRA::set(int id, int val) {
 }
 
 void IVRA::show(int id) {
-	std::cout << rgt[id] << std::endl;
+	std::cout << rgt[id];
 }
 
 void IVRA::add(int id1, int id2, int exit) {
@@ -44,6 +44,12 @@ void IVRA::div(int id1, int id2, int exit) {
 
 void IVRA::mod(int id1, int id2, int exit) {
 	rgt[exit] = rgt[id1] % rgt[id2];
+}
+
+void IVRA::or(int id1, int id2, int exit) {
+	if (rgt[id1] || rgt[id2]) {
+		rgt[exit] = 1;
+	}
 }
 
 void IVRA::not(int id) {
