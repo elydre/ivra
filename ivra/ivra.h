@@ -25,8 +25,8 @@ public:
 	void mul(int id1, int id2, int exit);
 	void div(int id1, int id2, int exit);
 	void mod(int id1, int id2, int exit);
-	void not(int id);
-	void or(int id1, int id2, int exit);
+	void bool_not(int id);
+	void bool_or(int id1, int id2, int exit);
 	void is_egal(int id1, int id2, int exit);
 	void is_sup(int id1, int id2, int exit);
 	int get_rgt(int id);

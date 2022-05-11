@@ -78,11 +78,11 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 			}
 
 			else if (mode == "or") {
-				obj.or(stoi(args[1]), stoi(args[2]), stoi(args[3]));
+				obj.bool_or(stoi(args[1]), stoi(args[2]), stoi(args[3]));
 			}
 
 			else if (mode == "not") {
-				obj.not(stoi(args[1]));
+				obj.bool_not(stoi(args[1]));
 			}
 
 			else if (mode == "while")

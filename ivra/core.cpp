@@ -46,13 +46,13 @@ void IVRA::mod(int id1, int id2, int exit) {
 	rgt[exit] = rgt[id1] % rgt[id2];
 }
 
-void IVRA::or(int id1, int id2, int exit) {
+void IVRA::bool_or(int id1, int id2, int exit) {
 	if (rgt[id1] || rgt[id2]) {
 		rgt[exit] = 1;
 	}
 }
 
-void IVRA::not(int id) {
+void IVRA::bool_not(int id) {
 	if (rgt[id]) {
 		rgt[id] = 0;
 	}
