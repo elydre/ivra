@@ -42,6 +42,14 @@ run:
 | `or`			| boolean or				| or *rgt* *rgt* *rgt*	|
 | `not`			| boolean not				| not *rgt* *rgt*		|
 
+# Tips
+
+-# the program will stop when the register 0 is equal to 0.
+-# do not use register 0 😊
+-# you can use while for condition.
+-# use `test_class` for test your program.
+-# put a period at the end of empty lines.
+-# comment your code.
 
 ## Example
 
