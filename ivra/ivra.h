@@ -18,6 +18,7 @@ private:
 public:
 	void test_class();
 	void set(int id, int val);
+	void cp(int id1, int exit);
 	void show(int to);
 	void add(int id1, int id2, int exit);
 	void sub(int id1, int id2, int exit);
@@ -25,6 +26,7 @@ public:
 	void div(int id1, int id2, int exit);
 	void not(int id);
 	void is_egal(int id1, int id2, int exit);
+	void is_sup(int id1, int id2, int exit);
 	int get_rgt(int id);
 };
 

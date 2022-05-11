@@ -28,6 +28,11 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 			else if (mode == "set") {
 				obj.set(stoi(args[1]), stoi(args[2]));
 			}
+
+			else if (mode == "cp") {
+				obj.cp(stoi(args[1]), stoi(args[2]));
+			}
+
 			else if (mode == "show") {
 				obj.show(stoi(args[1]));
 			}
@@ -50,6 +55,10 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 
 			else if (mode == "is_egal") {
 				obj.is_egal(stoi(args[1]), stoi(args[2]), stoi(args[3]));
+			}
+
+			else if (mode == "is_sup") {
+				obj.is_sup(stoi(args[1]), stoi(args[2]), stoi(args[3]));
 			}
 
 			else if (mode == "not") {

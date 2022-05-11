@@ -55,6 +55,14 @@ void IVRA::is_egal(int id1, int id2, int exit) {
 	rgt[exit] = rgt[id1] == rgt[id2];
 }
 
+void IVRA::is_sup(int id1, int id2, int exit) {
+	rgt[exit] = rgt[id1] > rgt[id2];
+}
+
 int IVRA::get_rgt(int id) {
 	return rgt[id];
+}
+
+void IVRA::cp(int id1, int exit) {
+	rgt[exit] = rgt[id1];
 }
