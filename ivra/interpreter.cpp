@@ -41,6 +41,10 @@ void start_inter(vector<string> code, IVRA obj, int while_id) {
 				obj.show(stoi(args[1]));
 			}
 
+			else if (mode == "br") {
+				cout << endl;
+			}
+
 			else if (mode == "add") {
 				obj.add(stoi(args[1]), stoi(args[2]), stoi(args[3]));
 			}
