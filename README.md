@@ -1,5 +1,5 @@
 # ivra
-interactive virtual register
+interactive virtual rgt
 
 ## Compile and run
 
@@ -18,6 +18,30 @@ run:
 ```
 ./ivra/ivra
 ```
+
+## keywords
+
+*in this part, register will be called as **rgt**.*
+
+| keyword 		| description				| syntax				|
+| ------------- | ------------------------- | --------------------- |
+| `end`			| end of while loop			| end					|
+| `while`		| while loop				| while *rgt != 0*		|
+| `test_class`	| test ivra 				| test_class			|
+| `set`			| set number on rgt			| set *rgt* *number*	|
+| `cp`			| copy rgt					| cp *rgt* *rgt*		|
+| `show`		| show rgt					| show *rgt*			|
+| `br`			| print new line			| br					|
+| `cout`		| print word in console		| cout *word*			|
+| `add`			| add two rgts				| add *rgt* *rgt* *rgt*	|
+| `sub`			| subtract two rgts			| sub *rgt* *rgt* *rgt*	|
+| `mul`			| multiply two rgts			| mul *rgt* *rgt* *rgt*	|
+| `div`			| divide two rgts			| sub *rgt* *rgt* *rgt*	|
+| `is_egal`		| test if two r. are equal	| is_egal *rgt* *rgt*	|
+| `is_sup`		| test if a r. is superior	| is_sup *rgt* *rgt*	|
+| `or`			| boolean or				| or *rgt* *rgt* *rgt*	|
+| `not`			| boolean not				| not *rgt* *rgt*		|
+
 
 ## Example
 
@@ -95,3 +119,4 @@ while 0
 	.
 	end
 ```
+
