@@ -45,8 +45,7 @@ run:
 # Tips
 
 1. the program will stop when the register 0 is equal to 0.
-2. do not use register 0 😊
-3. you can use while for condition.
+3. you can use while for condition 😊
 4. use `test_class` for test your program.
 5. put a period at the end of empty lines.
 6. comment your code.
