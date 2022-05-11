@@ -78,7 +78,7 @@ set 10 2
 set 11 3
 set 12 0		// temp
 .
-set 13 100000	// max
+set 13 100000		// max
 .
 while 1
 	.
