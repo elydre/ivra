@@ -1,4 +1,4 @@
-﻿// point d'entrée de l'application
+﻿// point d'entrée de ivra
 
 #include "ivra.h"
 
