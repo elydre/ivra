@@ -42,7 +42,7 @@ run:
 | `or`			| boolean or				| or *in1 in2 out*		|
 | `not`			| boolean not				| not *rgt*				|
 
-# Tips
+## Tips
 
 1. the program will stop when the register 0 is equal to 0.
 3. you can use while for condition 😊
