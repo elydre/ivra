@@ -19,7 +19,7 @@ run:
 ./ivra/ivra
 ```
 
-## keywords
+## Keywords
 
 *in this part, register will be called as **rgt** and **r.***
 
