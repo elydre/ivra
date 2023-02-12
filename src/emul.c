@@ -70,9 +70,11 @@ uint32_t GT(emul_pass_t *st, int to_add) {
 
 void full_debug(emul_pass_t *st) {
     g_warn = 0;
-    printf("max stack size:         %d\n", st->max_stack_size);
-    printf("current token (index):  %d\n", *st->ct);
-    printf("current token (value):  %d\n", GT(st, 0));
+    printf("stack size:     0x%x\n", st->max_stack_size);
+    printf("CT (index):     %d\n", *st->ct);
+    printf("CT (value):     %d\n", GT(st, 0));
+    printf("token count:    %d\n", *st->token_count);
+
 }
 
 void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
@@ -149,8 +151,11 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
             return;
         }
         itn = GT(st, 0);
-    } while (itn != ITN_HLT);
-
-    printf("\nEmulation halted at T%d\n", ct);
+    } while (itn != ITN_HLT && g_warn);
+    if (g_warn) {
+        printf("\nEmulation halted at T%d\n", ct);
+    } else {
+        printf("\nEmulation halted due to error\n");
+    }
     free(st);
 }
