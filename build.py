@@ -57,14 +57,21 @@ match_table = {
     "-r": build_run,
 }
 
-if __name__ == "__main__":
+def main():
     args = sys.argv[1:]
+
     if len(args) == 0:
         build()
-    else:
-        for arg in args:
-            if arg in match_table:
-                match_table[arg]()
-            else:
-                print(f"Unknown argument {arg}")
-                show_help()
+        return 1
+
+    for arg in args:
+        if arg not in match_table:
+            print(f"Unknown argument {arg}")
+            show_help()
+            return 1
+        match_table[arg]()
+
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main())
