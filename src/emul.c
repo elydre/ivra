@@ -26,7 +26,7 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
 
     int current_token = 0;
 
-    printf("Starting emulation...\n");
+    printf("Starting emulation...\n\n");
 
     while (tokens[current_token] != ITN_HLT) {  
         if (tokens[current_token] == ITN_DIS) {
@@ -75,4 +75,5 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
             return;
         }
     }
+    printf("\nEmulation halted at T%d\n", current_token);
 }
