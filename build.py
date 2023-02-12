@@ -68,5 +68,3 @@ if __name__ == "__main__":
             else:
                 print(f"Unknown argument {arg}")
                 show_help()
-
-    
