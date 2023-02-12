@@ -20,7 +20,7 @@
 #define ITN_JMP 0x0D     // CT = R(1)
 #define ITN_GIF 0x0E     // if R(1) != 0 then CT = R(2)
 #define ITN_SCT 0x0F     // R(1) = CT
-#define ITN_HLT 0x10    // exit
+#define ITN_HLT 0x10     // exit
 
 
 void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
