@@ -4,22 +4,22 @@
 #include "tools.h"
 
 
-#define ITN_DIS 0x0     // display R(1)
-#define ITN_SET 0x1     // R(1) = (2)
-#define ITN_CPY 0x2     // R(1) = R(2)
-#define ITN_TRC 0x3     // R(R(1)) = R(R(2))
-#define ITN_ADD 0x4     // R(1) = R(1) + R(2)
-#define ITN_SUB 0x5     // R(1) = R(1) - R(2)
-#define ITN_MUL 0x6     // R(1) = R(1) * R(2)
-#define ITN_DIV 0x7     // R(1) = R(1) / R(2)
-#define ITN_AND 0x8     // R(1) = R(1) & R(2)
-#define ITN_HOR 0x9     // R(1) = R(1) | R(2)
-#define ITN_NOT 0xA     // R(1) = ~R(1)
-#define ITN_SUP 0xB     // R(1) = R(1) > R(2)
-#define ITN_EQU 0xC     // R(1) = R(1) == R(2)
-#define ITN_JMP 0xD     // CT = R(1)
-#define ITN_GIF 0xE     // if R(1) != 0 then CT = R(2)
-#define ITN_SCT 0xF     // R(1) = CT
+#define ITN_DIS 0x00     // display R(1)
+#define ITN_SET 0x01     // R(1) = (2)
+#define ITN_CPY 0x02     // R(1) = R(2)
+#define ITN_TRC 0x03     // R(R(1)) = R(R(2))
+#define ITN_ADD 0x04     // R(1) = R(1) + R(2)
+#define ITN_SUB 0x05     // R(1) = R(1) - R(2)
+#define ITN_MUL 0x06     // R(1) = R(1) * R(2)
+#define ITN_DIV 0x07     // R(1) = R(1) / R(2)
+#define ITN_AND 0x08     // R(1) = R(1) & R(2)
+#define ITN_HOR 0x09     // R(1) = R(1) | R(2)
+#define ITN_NOT 0x0A     // R(1) = ~R(1)
+#define ITN_SUP 0x0B     // R(1) = R(1) > R(2)
+#define ITN_EQU 0x0C     // R(1) = R(1) == R(2)
+#define ITN_JMP 0x0D     // CT = R(1)
+#define ITN_GIF 0x0E     // if R(1) != 0 then CT = R(2)
+#define ITN_SCT 0x0F     // R(1) = CT
 #define ITN_HLT 0x10    // exit
 
 
