@@ -8,22 +8,23 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 ## Instructions
 
 ```
-0.   DIS => display R(1)
-1.   SET => R(1) = (2)
-2.   CPY => R(1) = R(2)
-3.   TRC => R(1) = R(R(2))
+00.   DIS => display R(1)
+01.   SET => R(1) = (2)
+02.   CPY => R(1) = R(2)
+03.   TRC => R(1) = R(R(2))
 
-4.   ADD => R(1) = R(1) + R(2)
-5.   SUB => R(1) = R(1) - R(2)
-6.   MUL => R(1) = R(1) * R(2)
-7.   DIV => R(1) = R(1) / R(2)
+04.   ADD => R(1) = R(1) + R(2)
+05.   SUB => R(1) = R(1) - R(2)
+06.   MUL => R(1) = R(1) * R(2)
+07.   DIV => R(1) = R(1) / R(2)
 
-8.   AND => R(1) = R(1) & R(2)
-9.   HOR => R(1) = R(1) | R(2)
-A.   NOT => R(1) = ~R(1)
+08.   AND => R(1) = R(1) & R(2)
+09.   HOR => R(1) = R(1) | R(2)
+10.   NOT => R(1) = ~R(1)
 
-B.   SUP => R(1) = R(1) > R(2)
-C.   EQU => R(1) = R(1) == R(2)
+11.   SUP => R(1) = R(1) > R(2)
+12.   EQU => R(1) = R(1) == R(2)
 
-D.   JMP => PC = R(1)
+13.   JMP => PC = R(1)
+14.   HLT => exit
 ```
