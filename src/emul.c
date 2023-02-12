@@ -18,7 +18,8 @@
 #define ITN_SUP 0xB     // R(1) = R(1) > R(2)
 #define ITN_EQU 0xC     // R(1) = R(1) == R(2)
 #define ITN_JMP 0xD     // PC = R(1)
-#define ITN_HLT 0xE     // Halt
+#define ITN_GIF 0xE     // if R(1) != 0 then PC = R(2
+#define ITN_HLT 0xF     // exit
 
 
 void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
@@ -70,6 +71,12 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
             current_token += 3;
         } else if (tokens[current_token] == ITN_JMP) {
             current_token = memory[tokens[current_token + 1]];
+        } else if (tokens[current_token] == ITN_GIF) {
+            if (memory[tokens[current_token + 1]] != 0) {
+                current_token = memory[tokens[current_token + 2]];
+            } else {
+                current_token += 3;
+            }
         } else {
             printf("Unknown instruction: %d at %d\n", tokens[current_token], current_token);
             return;

@@ -26,5 +26,7 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 12.   EQU => R(1) = R(1) == R(2)
 
 13.   JMP => PC = R(1)
-14.   HLT => exit
+14.   GIF => if R(1) != 0 then PC = R(2)
+
+15.   HLT => exit
 ```
