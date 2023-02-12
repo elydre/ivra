@@ -20,11 +20,17 @@ int main(int argc, char *argv[]) {
 
     print_lexer_output(tokens, token_count);
 
+    if (token_count == 0) {
+        printf("No tokens found...\n");
+        return 1;
+    }
+
     uint32_t *mem = calloc(MEM_SIZE, sizeof(uint32_t));
 
     start_emul(tokens, token_count, mem);
 
-    free(tokens);    
+    free(tokens);
+    free(mem);
 
     return 0;
 }
