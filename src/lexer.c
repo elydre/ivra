@@ -13,8 +13,21 @@ uint32_t *lex_string(char *program, int *ptr_token_count) {
     int tmp_index = 0;
     int tmp_value;
 
+    int in_comment = 0;
+
     while (*current != '\0') {
         char c = *current;
+
+        if (c == '#') {
+            in_comment = !in_comment;
+            current++;
+            continue;
+        }
+
+        if (in_comment) {
+            current++;
+            continue;
+        }
 
         if (c == ' ' || c == '\n' || c == '\t') {
             if (tmp_index == 0) {

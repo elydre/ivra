@@ -7,7 +7,7 @@
 #define ITN_DIS 0x0     // display R(1)
 #define ITN_SET 0x1     // R(1) = (2)
 #define ITN_CPY 0x2     // R(1) = R(2)
-#define ITN_TRC 0x3     // R(1) = R(R(2))
+#define ITN_TRC 0x3     // R(R(1)) = R(R(2))
 #define ITN_ADD 0x4     // R(1) = R(1) + R(2)
 #define ITN_SUB 0x5     // R(1) = R(1) - R(2)
 #define ITN_MUL 0x6     // R(1) = R(1) * R(2)
@@ -17,9 +17,10 @@
 #define ITN_NOT 0xA     // R(1) = ~R(1)
 #define ITN_SUP 0xB     // R(1) = R(1) > R(2)
 #define ITN_EQU 0xC     // R(1) = R(1) == R(2)
-#define ITN_JMP 0xD     // PC = R(1)
-#define ITN_GIF 0xE     // if R(1) != 0 then PC = R(2
-#define ITN_HLT 0xF     // exit
+#define ITN_JMP 0xD     // CT = R(1)
+#define ITN_GIF 0xE     // if R(1) != 0 then CT = R(2)
+#define ITN_SCT 0xF     // R(1) = CT
+#define ITN_HLT 0x10    // exit
 
 
 void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
@@ -40,7 +41,7 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
             memory[tokens[current_token + 1]] = memory[tokens[current_token + 2]];
             current_token += 3;
         } else if (tokens[current_token] == ITN_TRC) {
-            memory[tokens[current_token + 1]] = memory[memory[tokens[current_token + 2]]];
+            memory[memory[tokens[current_token + 1]]] = memory[memory[tokens[current_token + 2]]];
             current_token += 3;
         } else if (tokens[current_token] == ITN_ADD) {
             memory[tokens[current_token + 1]] += memory[tokens[current_token + 2]];
@@ -77,6 +78,9 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
             } else {
                 current_token += 3;
             }
+        } else if (tokens[current_token] == ITN_SCT) {
+            memory[tokens[current_token + 1]] = current_token;
+            current_token += 2;
         } else {
             printf("Unknown instruction: %d at %d\n", tokens[current_token], current_token);
             return;
