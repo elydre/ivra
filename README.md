@@ -31,3 +31,26 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 
 16.   HLT => exit
 ```
+
+## Examples
+
+### print 1 to 10
+
+```py
+1 0 0   # counter #
+1 1 9   # max -1 #
+1 3 1   # increment value #
+1 9 26  # increment section index #
+
+15 8    # save the current position #
+2 2 0   # copy counter for comparison #
+11 2 1  # compare counter to max #
+10 2    # we need to jump if false #
+14 2 9  # jump to increment section #
+
+16      # halt #
+
+4 0 3   # increment counter #
+0 0     # print counter #
+13 8    # jump back to save position #
+```
