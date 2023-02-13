@@ -8,7 +8,7 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 ## Instructions
 
 ```
-00.   DIS => display R(1)
+00.   DIS => display R(1) as a text if R(2) else as a number
 01.   SET => R(1) = (2)
 02.   CPY => R(1) = R(2)
 03.   TRC => R(R(1)) = R(R(2))

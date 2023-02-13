@@ -6,7 +6,7 @@
 #include "tools.h"
 
 
-#define ITN_DIS 0x00     // display R(1)
+#define ITN_DIS 0x00     // display R(1) as a text if R(2) else as a number
 #define ITN_SET 0x01     // R(1) = (2)
 #define ITN_CPY 0x02     // R(1) = R(2)
 #define ITN_TRC 0x03     // R(R(1)) = R(R(2))
@@ -97,8 +97,14 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
 
     do {
         if (itn == ITN_DIS) {
-            printf("program: %d\n", GR(st, GT(st, 1)));
-            ct += 2;
+            if (GR(st, GT(st, 2))) {
+                for (int i = 0; GR(st, GT(st, 1) + i) != 0; i++) {
+                    putchar(GR(st, GT(st, 1) + i));
+                }
+            } else {
+                printf("%d", GR(st, GT(st, 1)));
+            }
+            ct += 3;
         } else if (itn == ITN_SET) {
             SR(st, GT(st, 1), GT(st, 2));
             ct += 3;
