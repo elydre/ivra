@@ -29,7 +29,7 @@ uint32_t *lex_string(char *program, int *ptr_token_count) {
             continue;
         }
 
-        if (c == ' ' || c == '\n' || c == '\t') {
+        if (c == ' ' || c == '\n' || c == '\t' || c == '\r') {
             if (tmp_index == 0) {
                 current++;
                 continue;
