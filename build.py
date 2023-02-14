@@ -1,3 +1,5 @@
+from perparser.main import preparse as preparse
+
 import sys
 import os
 
@@ -37,6 +39,7 @@ def build():
     link_files(entry, objs)
 
 def build_run():
+    preparse()
     build()
     print("\n==== RUNNING ====")
     execute_command(f"./{OUTPUT}")

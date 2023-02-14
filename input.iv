@@ -1,0 +1,6 @@
+test:
+    SET 0 1
+    SET 1 0
+    DIS 0 1
+    HLT
+END
