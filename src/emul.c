@@ -95,6 +95,12 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
 
     itn = GT(st, 0);
 
+    if (itn == ITN_HLT) {
+        printf("Emulation halted, WOW VERY USEFUL PROGRAM!\n");
+        free(st);
+        return;
+    }
+
     do {
         if (itn == ITN_DIS) {
             if (GR(st, GT(st, 2))) {
@@ -158,10 +164,12 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
         }
         itn = GT(st, 0);
     } while (itn != ITN_HLT && g_warn);
+
     if (g_warn) {
         printf("\nEmulation halted at T%d\n", ct);
     } else {
         printf("\nEmulation halted due to error\n");
     }
+
     free(st);
 }
