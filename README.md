@@ -95,7 +95,7 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 16      # safe halt #
 
 # SECTION print #
-0 42 7   # print R0 as number #
+0 42 7  # print R42 as number #
 0 6 6   # print newline #
 16
 ```
