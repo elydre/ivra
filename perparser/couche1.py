@@ -22,9 +22,8 @@ def preparse():
     for i, part in enumerate(content.split(" ")):
         if part == "": continue
         part_list.append(Part(part, i))
-    print(part_list)
 
-    # we loop through the list and look for GOTO
+    # we loop through the list and look for GOTO and GOTOIF
     i = 0
     while i < len(part_list):
         part = part_list[i]
@@ -40,13 +39,26 @@ def preparse():
             for command in goto_command.split(" "):
                 part_list.insert(i, Part(command, 0))
                 i += 1
+        elif part.value == "GOTOIF":
+            # wee remove the GOTOIF
+            part_list.pop(i)
+            # we need to find the label
+            memory = part_list[i]
+            part_list.pop(i)
+            label = part_list[i]
+            part_list.pop(i)
+            # we need to find the label in the list
+            print(f"GOTOIF {label.value}")
+            goto_command = f"SET 0 {label.value} GIF {memory.value} 0"
+            for command in goto_command.split(" "):
+                part_list.insert(i, Part(command, 0))
+                i += 1
         else:
             i += 1
 
     # we reindex the list
     for i, part in enumerate(part_list):
         part.index = i
-    print(part_list)
 
     # we collect the index of the labels
     labels = {}
@@ -58,7 +70,6 @@ def preparse():
     # we reindex the list
     for i, part in enumerate(part_list):
         part.index = i
-    print(part_list)
 
     # we replace the labels with their index
     for part in part_list:
@@ -70,6 +81,8 @@ def preparse():
     for part in part_list:
         if part.value in keywords:
             part.value = str(keywords.index(part.value))
+    
+    print(part_list)
     
     # we remake the content
     content = " ".join([part.value for part in part_list])
