@@ -38,7 +38,7 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 
 #### print 1 to 10
 
-```s
+```sh
 1 6 10  # constant \n #
 1 7 0   # constant 0 #
 
@@ -63,7 +63,7 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 
 #### the biggest number
 
-```s
+```sh
 1 6 10  # constant \n #
 1 7 0   # constant 0 #
 
@@ -106,7 +106,7 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 
 #### the biggest number
 
-```s
+```sh
 SET 6 10  # constant \n #
 SET 7 0   # constant 0 #
 
