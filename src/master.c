@@ -37,6 +37,7 @@ int main(int argc, char *argv[]) {
     start_emul(tokens, token_count, mem);
 
     free(tokens);
+    free(file);
     free(mem);
 
     return 0;

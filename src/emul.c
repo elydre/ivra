@@ -105,7 +105,7 @@ void start_emul(uint32_t *tokens, int token_count, uint32_t *memory) {
         if (itn == ITN_DIS) {
             if (GR(st, GT(st, 2))) {
                 for (int i = 0; GR(st, GT(st, 1) + i) != 0; i++) {
-                    putchar(GR(st, GT(st, 1) + i));
+                    printf("%c", GR(st, GT(st, 1) + i));
                 }
             } else {
                 printf("%d", GR(st, GT(st, 1)));
