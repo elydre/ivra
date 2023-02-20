@@ -1,9 +1,14 @@
 # ivra
-interactive virtual rgt
+IVRA is a register-based runtime. Around the runtime, layers
+of abstraction are created to use IVRA more simply.
+
+Runtime auto-build is [available](https://github.com/elydre/ivra/releases/tag/latest)
+for linux (x86_64) and for profanOS (i386).
 
 ## Update Note
 
-v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https://github.com/elydre/ivra/releases)
+v1 is in progress, if you are looking for v0 (in c++)
+watch [the releases](https://github.com/elydre/ivra/releases)
 
 ## Instructions
 
