@@ -1,4 +1,4 @@
-from perparser.main import preparse as preparse
+from perparser.couche1 import preparse as c1preparse
 
 import sys
 import os
@@ -31,6 +31,7 @@ def link_files(entry, objs):
     execute_command(f"{CC} {entry} {' '.join(objs)} -o {OUTPUT}")
 
 def build():
+    c1preparse()
     print("==== BUILDING ====")
     execute_command(f"mkdir -p {OBJDIR}")
     objs = [compile_file(src) for src in CSOURCES]
@@ -39,7 +40,6 @@ def build():
     link_files(entry, objs)
 
 def build_run():
-    preparse()
     build()
     print("\n==== RUNNING ====")
     execute_command(f"./{OUTPUT}")

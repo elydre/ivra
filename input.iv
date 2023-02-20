@@ -1,6 +1,8 @@
-test:
-    SET 0 1
-    SET 1 0
-    DIS 0 1
-    HLT
-END
+SET 10 66
+SET 11 0
+DIS 10 11
+GOTO truc
+HLT
+truc:
+DIS 0 11
+HLT
