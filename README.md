@@ -34,9 +34,11 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 
 ## Examples
 
-### print 1 to 10
+### abstraction layer 0
 
-```py
+#### print 1 to 10
+
+```s
 1 6 10  # constant \n #
 1 7 0   # constant 0 #
 
@@ -59,9 +61,9 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 13 8    # jump back to save position #
 ```
 
-### the biggest number
+#### the biggest number
 
-```py
+```s
 1 6 10  # constant \n #
 1 7 0   # constant 0 #
 
@@ -98,4 +100,44 @@ v1 is in progress, if you are looking for v0 (in c++) watch [the releases](https
 0 42 7  # print R42 as number #
 0 6 6   # print newline #
 16
+```
+
+### abstraction layer 1
+
+#### the biggest number
+
+```s
+SET 6 10  # constant \n #
+SET 7 0   # constant 0 #
+
+SET 100 42
+SET 101 64
+SET 102 12
+
+SET 12 66     # section print #
+
+CPY 103 100   # copy R0 to R3 #
+SUP 103 101   # R3 = R3 > R1  #
+CPY 104 100   # copy R0 to R4 #
+SUP 104 102   # R4 = R4 > R2  #
+
+AND 103 104   # R3 = R3 && R4 #
+CPY 42 100    # copy R0 to R42 #
+GOTOIF 103 print
+
+CPY 103 102   # copy R2 to R3 #
+SUP 103 101   # R3 = R3 > R1  #
+CPY 104 102   # copy R2 to R4 #
+SUP 104 100   # R4 = R4 > R0  #
+
+AND 103 104   # R3 = R3 && R4 #
+CPY 42 102    # copy R2 to R42 #
+GOTOIF 103 print
+
+CPY 42 101    # copy R1 to R42 #
+
+print:
+DIS 42 7      # print R42 as number #
+DIS 6 6       # print newline #
+HLT
 ```
