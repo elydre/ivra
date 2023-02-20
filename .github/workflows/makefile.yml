@@ -26,6 +26,7 @@ jobs:
       run: |
         git clone https://github.com/elydre/ivra.git
         cd ivra
+        git checkout profan-runtime
         python3 ./build.py -b
         cp ivra.bin ../ivra-profanOS.bin
 
