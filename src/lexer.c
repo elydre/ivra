@@ -1,7 +1,7 @@
-#include <stdint.h>
-#include <stddef.h>
+#include <syscall.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <type.h>
 
 uint32_t *lex_string(char *program, int *ptr_token_count) {
     int token_count = 0;
@@ -53,23 +53,19 @@ uint32_t *lex_string(char *program, int *ptr_token_count) {
     return tokens;
 }
 
-uint32_t *lex_file(char *filename, int *token_count) {
-    FILE *file = fopen(filename, "r");
-    if (file == NULL) {
-        fprintf(stderr, "Could not open file %s\n", filename);
-        return NULL;
+uint32_t *lex_file(char *file, int *token_count) {
+    char *program = NULL;
+
+    if (c_fs_does_path_exists(file) && c_fs_get_sector_type(c_fs_path_to_id(file)) == 2) {
+        char *program = c_fs_declare_read_array(file);
+        c_fs_read_file(file, (uint8_t *) program);
+
+        uint32_t *tokens = lex_string(program, token_count);
+
+        free(program);
+        
+        return tokens;
     }
 
-    fseek(file, 0, SEEK_END);
-    long size = ftell(file);
-    fseek(file, 0, SEEK_SET);
-
-    char *program = malloc(size + 2);
-    fread(program, 1, size, file);
-    fclose(file);
-
-    program[size] = ' ';
-    program[size + 1] = '\0';
-
-    return lex_string(program, token_count);
+    return NULL;
 }

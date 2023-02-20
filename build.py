@@ -1,13 +1,13 @@
-from perparser.couche1 import preparse as c1preparse
-
 import sys
 import os
 
 CC      = "gcc"
+LD      = "ld"
 
-OUTPUT  = "ivra.elf"
+OUTPUT  = "ivra"
 
-CFLAGS  = "-I ./include -Wall -Wextra"
+CFLAGS  = "-g -ffreestanding -fno-exceptions -m32 -Wimplicit-function-declaration -I ./profan_libs -I ./include"
+LDFLAGS = "-melf_i386 -e entry"
 
 OBJDIR  = "build"
 SRCDIR  = "src"
@@ -28,10 +28,11 @@ def compile_file(src, dir = SRCDIR):
     return obj
 
 def link_files(entry, objs):
-    execute_command(f"{CC} {entry} {' '.join(objs)} -o {OUTPUT}")
+    execute_command(f"{LD} {LDFLAGS} -o {OUTPUT}.pe {entry} {' '.join(objs)} ")
+    execute_command(f"objcopy -O binary {OUTPUT}.pe {OUTPUT}.bin")
+    execute_command(f"rm {OUTPUT}.pe")
 
 def build():
-    c1preparse()
     print("==== BUILDING ====")
     execute_command(f"mkdir -p {OBJDIR}")
     objs = [compile_file(src) for src in CSOURCES]
@@ -39,25 +40,19 @@ def build():
     entry = compile_file("entry.c", ".")
     link_files(entry, objs)
 
-def build_run():
-    build()
-    print("\n==== RUNNING ====")
-    execute_command(f"./{OUTPUT}")
-
 def clean():
-    execute_command(f"rm -rf {OBJDIR} {OUTPUT}")
+    execute_command(f"rm -rf {OBJDIR} {OUTPUT}.pe {OUTPUT}.bin")
 
 def show_help():
     print("Usage: build.py [options]")
     print("Options:")
     print("  -h  Show this help")
     print("  -c  Clean build directory")
-    print("  -r  Build and run")
 
 match_table = {
     "-h": show_help,
     "-c": clean,
-    "-r": build_run,
+    "-b": build,
 }
 
 def main():
