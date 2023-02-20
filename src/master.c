@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
-        printf("$BUsage: cat <file>\n");
+        printf("$BUsage: ivra <file>\n");
         return 0;
     }
     
