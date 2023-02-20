@@ -60,7 +60,7 @@ def main():
 
     if len(args) == 0:
         build()
-        return 1
+        return 0
 
     for arg in args:
         if arg not in match_table:
