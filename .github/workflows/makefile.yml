@@ -30,6 +30,7 @@ jobs:
     
     - name: build runtime (profanOS)
       run: |
+        pwd
         git checkout profan-runtime
         python3 ./build.py -b
         cp ivra.bin ../ivra-profanOS.bin
