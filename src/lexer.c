@@ -71,5 +71,8 @@ uint32_t *lex_file(char *filename, int *token_count) {
     program[size] = ' ';
     program[size + 1] = '\0';
 
-    return lex_string(program, token_count);
+    uint32_t *tokens = lex_string(program, token_count);
+    free(program);
+
+    return tokens;
 }
