@@ -3,7 +3,7 @@ IVRA is a register-based runtime. Around the runtime, layers
 of abstraction are created to use IVRA more simply.
 
 Runtime auto-build is [available](https://github.com/elydre/ivra/releases/tag/latest)
-for linux (x86_64) and for profanOS (i386).
+for linux (x86_64) and for [profanOS](https://github.com/elydre/profanOS) (i386).
 
 ## Update Note
 
