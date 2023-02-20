@@ -31,7 +31,6 @@ def link_files(entry, objs):
     execute_command(f"{CC} {entry} {' '.join(objs)} -o {OUTPUT}")
 
 def build():
-    c1preparse()
     print("==== BUILDING ====")
     execute_command(f"mkdir -p {OBJDIR}")
     objs = [compile_file(src) for src in CSOURCES]
@@ -40,6 +39,7 @@ def build():
     link_files(entry, objs)
 
 def build_run():
+    c1preparse()
     build()
     print("\n==== RUNNING ====")
     execute_command(f"./{OUTPUT}")
@@ -53,11 +53,13 @@ def show_help():
     print("  -h  Show this help")
     print("  -c  Clean build directory")
     print("  -r  Build and run")
+    print("  -b  Build only")
 
 match_table = {
     "-h": show_help,
     "-c": clean,
     "-r": build_run,
+    "-b": build
 }
 
 def main():
@@ -65,7 +67,7 @@ def main():
 
     if len(args) == 0:
         build()
-        return 1
+        return 0
 
     for arg in args:
         if arg not in match_table:

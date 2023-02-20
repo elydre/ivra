@@ -19,13 +19,13 @@ jobs:
 
     - name: build runtime (linux)
       run: |
-        python3 ./build.py
+        python3 ./build.py -b
         cp ivra.elf ivra-linux-x86_64.elf
     
     - name: build runtime (profanOS)
       run: |
         git checkout profan-runtime
-        python3 ./build.py
+        python3 ./build.py -b
         cp ivra.bin ivra-profanOS.bin
 
     - name: Release to GitHub
