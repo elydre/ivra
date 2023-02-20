@@ -17,23 +17,23 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gcc python3
 
-    - name: clone repo
-      run: |
-        git clone https://github.com/elydre/ivra.git
-        cd ivra
-
     - name: build runtime (linux)
       run: |
-        git checkout main
+        rm -Rf *
+        git clone -b main https://github.com/elydre/ivra.git
+        cd ivra
         python3 ./build.py -b
         cp ivra.elf ../ivra-linux-x86_64.elf
+        cd ..
     
     - name: build runtime (profanOS)
       run: |
-        git branch -a
-        git checkout origin/profan-runtime
+        rm -Rf ivra
+        git clone -b profan-runtime https://github.com/elydre/ivra.git
+        cd ivra
         python3 ./build.py -b
         cp ivra.bin ../ivra-profanOS.bin
+        cd ..
 
     - name: Release to GitHub
       uses: marvinpinto/action-automatic-releases@latest
