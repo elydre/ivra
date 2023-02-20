@@ -24,9 +24,10 @@ jobs:
     
     - name: build runtime (profanOS)
       run: |
-        git checkout profan-runtime
+        git clone https://github.com/elydre/ivra.git
+        cd ivra
         python3 ./build.py -b
-        cp ivra.bin ivra-profanOS.bin
+        cp ivra.bin ../ivra-profanOS.bin
 
     - name: Release to GitHub
       uses: marvinpinto/action-automatic-releases@latest
