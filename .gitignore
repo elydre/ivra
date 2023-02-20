@@ -1,4 +1,13 @@
-__pycache__/
+# .vscode folder
 .vscode/
+
+# pycache folder
+__pycache__/
+
+# build folder
 build/
+
+# output files
 *.elf
+*.bin
+*.pe
